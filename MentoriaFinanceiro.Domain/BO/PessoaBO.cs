@@ -23,8 +23,6 @@ namespace MentoriaFinanceiro.Domain.BO
             {
                 throw new FormatException("É necessário ter mais de 18 anos");
             }
-
-            return pessoaDto;
         }
     }
 }

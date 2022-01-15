@@ -2,6 +2,7 @@
 using MentoriaFinanceiro.Application.Interfaces;
 using MentoriaFinanceiro.Application.Interfaces.Mappers;
 using MentoriaFinanceiro.Domain.BO;
+using MentoriaFinanceiro.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,7 @@ namespace MentoriaFinanceiro.API.Controllers
 
         public ActionResult<string> Get(int id)
         {
+
             return Ok(_applicationServicePessoa.GetAll());
         }
         
@@ -41,8 +43,6 @@ namespace MentoriaFinanceiro.API.Controllers
             {
                 if (pessoaDto == null)
                     return NotFound();
-
-                _pessoaBO.ValidarInsercao(_mapperPessoa.MapperDtoToEntity(pessoaDto));
 
                 _applicationServicePessoa.Add(pessoaDto);
                 return Ok("Cadastro de pessoa realizado com sucesso!");

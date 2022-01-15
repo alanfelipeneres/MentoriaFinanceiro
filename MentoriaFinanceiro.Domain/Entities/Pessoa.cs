@@ -27,6 +27,5 @@ namespace MentoriaFinanceiro.Domain.Entities
 
         // relação com a entidade conta 
         public Conta Conta { get; set; }
-
     }
 }
